@@ -3,7 +3,7 @@
       <div class="lista">
         <Tarefa v-for="(tarefa, index) in tarefas" :key="index" :tarefa="tarefa"/>
             <Box v-if="listaEstaVazia">
-              Você não está muito produtivo hoje :(
+              Hmmm... seems like u not so much productive today...
             </Box>
       </div>
 </template>
