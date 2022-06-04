@@ -1,11 +1,11 @@
-# alura-tracker
+# a simples time tracker task's w/ Vue3 VueRouter@4
 
-## Project setup
+## u can easly setup the Project by:
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+### Then u've Compiles and hot-reloads for development
 ```
 npm run serve
 ```
