@@ -1,8 +1,8 @@
 <template>
-      <Form @toSaveTasks="salvarTasks"/>
+      <Form @toSaveTasks="saveTasks"/>
       <div class="lista">
         <Tasks v-for="(Tasks, index) in Taskss" :key="index" :Tasks="Tasks"/>
-            <Box v-if="listaEstaVazia">
+            <Box v-if="isListEmpty">
               Hmmm... seems like u not so much productive today...
             </Box>
       </div>
@@ -29,12 +29,12 @@ export default defineComponent({
     }
   },
   computed: {
-    listaEstaVazia () : boolean {
+    isListEmpty () : boolean {
       return this.Taskss.length === 0
     }
   },
   methods: {
-    salvarTasks (Tasks: ITasks) {
+    saveTasks (Tasks: ITasks) {
       this.Taskss.push(Tasks)
     },
   }
@@ -49,11 +49,11 @@ main {
   --bg-primary: #fff;
   --text-primary: #000;
 }
-main.modo-escuro {
+main.dark-mode {
   --bg-primary: #2b2d42;
   --text-primary: #ddd;
 }
-.conteudo {
+.content {
   background-color: var(--bg-primary);
 }
 </style>

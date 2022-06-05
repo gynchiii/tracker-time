@@ -12,14 +12,14 @@ import { defineComponent } from 'vue'
 export default defineComponent({
   name: 'StopWatch',
   props: {
-    tempoEmSegundos: {
+    timeInSeconds: {
       type: Number,
       default: 0
     }
   },
   computed: {
     elapsedTime () : string {
-      return new Date(this.tempoEmSegundos * 1000).toISOString().substr(11,8)
+      return new Date(this.timeInSeconds * 1000).toISOString().substr(11,8)
     }
   },
 })

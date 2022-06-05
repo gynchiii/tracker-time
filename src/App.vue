@@ -1,9 +1,9 @@
 <template>
-  <main class="columns is-gapless is-multiline" :class="{ 'modo-escuro': darkModeActive }">
+  <main class="columns is-gapless is-multiline" :class="{ 'dark-mode': darkModeActive }">
     <div class="column is-one-quarter">
       <LateralBar @toThemeChanged="trocarTema"/>
     </div>
-    <div class="column is-three-quarter conteudo">
+    <div class="column is-three-quarter content">
     <!-- Here's vueRouter  -->
     <router-view></router-view>
     </div>
@@ -40,11 +40,11 @@ main {
   --bg-primary: #fff;
   --text-primary: #000;
 }
-main.modo-escuro {
+main.dark-mode {
   --bg-primary: #2b2d42;
   --text-primary: #ddd;
 }
-.conteudo {
+.content {
   background-color: var(--bg-primary);
 }
 </style>
