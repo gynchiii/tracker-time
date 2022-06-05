@@ -1,5 +1,5 @@
 <template>
-      <Form @aoSalvarTasks="salvarTasks"/>
+      <Form @toSaveTasks="salvarTasks"/>
       <div class="lista">
         <Tasks v-for="(Tasks, index) in Taskss" :key="index" :Tasks="Tasks"/>
             <Box v-if="listaEstaVazia">
