@@ -37,14 +37,14 @@ export default defineComponent({
   padding: 1.25rem;
 }
 main {
-  --bg-primario: #fff;
-  --texto-primario: #000;
+  --bg-primary: #fff;
+  --text-primary: #000;
 }
 main.modo-escuro {
-  --bg-primario: #2b2d42;
-  --texto-primario: #ddd;
+  --bg-primary: #2b2d42;
+  --text-primary: #ddd;
 }
 .conteudo {
-  background-color: var(--bg-primario);
+  background-color: var(--bg-primary);
 }
 </style>

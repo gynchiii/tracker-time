@@ -10,7 +10,7 @@
           type="text"
           class="input"
           placeholder="Wich task u wanna start?"
-          v-model="descricao"
+          v-model="description"
         />
       </div>
       <div class="column">
@@ -32,23 +32,23 @@ export default defineComponent({
   },
   data () {
     return {
-      descricao: ''
+      description: ''
     }
   },
   methods: {
     finishTasks (elapsedTime: number) : void {
       this.$emit('aoSalvarTasks', {
-        duracaoEmSegundos: elapsedTime,
-        descricao: this.descricao
+        durationInSeconds: elapsedTime,
+        description: this.description
       })
-      this.descricao = ''
+      this.description = ''
     }
   }
 });
 </script>
 <style>
 .Form {
-  color: var(--texto-primario);
-  background-color: var(--bg-primario);
+  color: var(--text-primary);
+  background-color: var(--bg-primary);
 }
 </style>
