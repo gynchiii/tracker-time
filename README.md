@@ -1,11 +1,12 @@
-# timestamp-tracker on vue3
 
-## Project setup
+# a simples time tracker task's w/ Vue3 VueRouter@4
+
+## u can easly setup the Project by:
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+### Then u've Compiles and hot-reloads for development
 ```
 npm run serve
 ```
