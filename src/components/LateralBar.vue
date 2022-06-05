@@ -29,7 +29,7 @@
 import { defineComponent } from 'vue'
 
 export default defineComponent({
-  name: 'BarraLateral',
+  name: 'LateralBar',
   emits: ['aoTemaAlterado'],
   data () {
     return {

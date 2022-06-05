@@ -1,13 +1,13 @@
 <template>
   <div class="is-flex is-align-items-center is-justify-content-space-between">
-    <Cronometro :tempoEmSegundos="tempoEmSegundos" />
-    <button class="button" @click="iniciar" :disabled="cronometroRodando">
+    <StopWatch :tempoEmSegundos="tempoEmSegundos" />
+    <button class="button" @click="iniciar" :disabled="StopWatchRodando">
       <span class="icon">
         <i class="fas fa-play"></i>
       </span>
       <span>play</span>
     </button>
-    <button class="button" @click="finalizar" :disabled="!cronometroRodando">
+    <button class="button" @click="finalizar" :disabled="!StopWatchRodando">
       <span class="icon">
         <i class="fas fa-stop"></i>
       </span>
@@ -18,34 +18,34 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import Cronometro from './Cronometro.vue'
+import StopWatch from './StopWatch.vue'
 
 export default defineComponent({
-  name: "Temporizador",
-  emits: ['aoTemporizadorFinalizado'],
+  name: "Timer",
+  emits: ['toTimerFinished'],
   components: {
-    Cronometro
+    StopWatch
   },
   data () {
     return {
       tempoEmSegundos: 0,
-      cronometro: 0,
-      cronometroRodando: false
+      StopWatch: 0,
+      StopWatchRodando: false
     }
   },
   methods: {
     iniciar () {
       // começar a contagem
       // 1 seg = 1000 ms
-      this.cronometroRodando = true
-      this.cronometro = setInterval(() => {
+      this.StopWatchRodando = true
+      this.StopWatch = setInterval(() => {
         this.tempoEmSegundos += 1        
       }, 1000)
     },
     finalizar () {
-      this.cronometroRodando = false
-      clearInterval(this.cronometro)
-      this.$emit('aoTemporizadorFinalizado', this.tempoEmSegundos)
+      this.StopWatchRodando = false
+      clearInterval(this.StopWatch)
+      this.$emit('toTimerFinished', this.tempoEmSegundos)
       this.tempoEmSegundos = 0
     }
   }

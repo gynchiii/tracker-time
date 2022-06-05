@@ -1,7 +1,7 @@
 <template>
   <main class="columns is-gapless is-multiline" :class="{ 'modo-escuro': modoEscuroAtivo }">
     <div class="column is-one-quarter">
-      <BarraLateral @aoTemaAlterado="trocarTema"/>
+      <LateralBar @aoTemaAlterado="trocarTema"/>
     </div>
     <div class="column is-three-quarter conteudo">
     <!-- Here's vueRouter  -->
@@ -12,12 +12,12 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import BarraLateral from './components/BarraLateral.vue'
+import LateralBar from './components/LateralBar.vue'
 
 export default defineComponent({
   name: 'App',
   components: {
-    BarraLateral
+    LateralBar
   },
   data () {
     return {

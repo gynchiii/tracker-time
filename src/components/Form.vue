@@ -1,5 +1,5 @@
 <template>
-  <div class="box formulario">
+  <div class="box Form">
     <div class="columns">
       <div
         class="column is-8"
@@ -14,7 +14,7 @@
         />
       </div>
       <div class="column">
-        <Temporizador @aoTemporizadorFinalizado="finalizarTarefa"/>
+        <Timer @toTimerFinished="finishTasks"/>
       </div>
     </div>
   </div>
@@ -22,13 +22,13 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import Temporizador from './Temporizador.vue'
+import Timer from './Timer.vue'
 
 export default defineComponent({
-  name: "Formulario",
-  emits: ['aoSalvarTarefa'],
+  name: "Form",
+  emits: ['aoSalvarTasks'],
   components: {
-    Temporizador
+    Timer
   },
   data () {
     return {
@@ -36,9 +36,9 @@ export default defineComponent({
     }
   },
   methods: {
-    finalizarTarefa (tempoDecorrido: number) : void {
-      this.$emit('aoSalvarTarefa', {
-        duracaoEmSegundos: tempoDecorrido,
+    finishTasks (elapsedTime: number) : void {
+      this.$emit('aoSalvarTasks', {
+        duracaoEmSegundos: elapsedTime,
         descricao: this.descricao
       })
       this.descricao = ''
@@ -47,7 +47,7 @@ export default defineComponent({
 });
 </script>
 <style>
-.formulario {
+.Form {
   color: var(--texto-primario);
   background-color: var(--bg-primario);
 }
