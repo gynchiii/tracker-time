@@ -1,7 +1,7 @@
 <template>
-  <main class="columns is-gapless is-multiline" :class="{ 'modo-escuro': modoEscuroAtivo }">
+  <main class="columns is-gapless is-multiline" :class="{ 'modo-escuro': darkModeActive }">
     <div class="column is-one-quarter">
-      <LateralBar @aoTemaAlterado="trocarTema"/>
+      <LateralBar @toThemeChanged="trocarTema"/>
     </div>
     <div class="column is-three-quarter conteudo">
     <!-- Here's vueRouter  -->
@@ -21,12 +21,12 @@ export default defineComponent({
   },
   data () {
     return {
-      modoEscuroAtivo: false
+      darkModeActive: false
     }
   },
   methods: {
-    trocarTema (modoEscuroAtivo: boolean) {
-      this.modoEscuroAtivo = modoEscuroAtivo
+    trocarTema (darkModeActive: boolean) {
+      this.darkModeActive = darkModeActive
     }
   }
 });

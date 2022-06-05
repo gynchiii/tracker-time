@@ -1,26 +1,27 @@
 <template>
   <header>
-      <h1 class="flex flex-center mb-4 mt-3">
-        <img width="70" src="../assets/logo.png" alt="">  
+      <h1 class="flex flex-center mb-5 mt-2">
+        <img width="80" src="../assets/logo.png" alt="">  
       </h1>
-      <button class="button" @click="alterarTema">
-        {{ textBotao }}
+      <button class="button" @click="changeTheme">
+        {{ buttonText }}
       </button>
       <nav class="panel mt-5"> 
-          <ul>
+          <ul class="links-col">
             <li>
               <router-link to="/" class="links">
                 <i class="fas fa-tasks"></i>
-                Tasks
+                <span class="ml-2">Tasks</span>
               </router-link>
             </li>
             <li>
               <router-link to="/projects" class="links">
                 <i class="fas fa-project-diagram"></i>
-                Projects
+                <span class="ml-2">Projects</span>
               </router-link>
             </li>
           </ul>
+
       </nav>
   </header>
 </template>
@@ -30,24 +31,24 @@ import { defineComponent } from 'vue'
 
 export default defineComponent({
   name: 'LateralBar',
-  emits: ['aoTemaAlterado'],
+  emits: ['toThemeChanged'],
   data () {
     return {
-      modoEscuroAtivo: false
+      darkModeActive: false
     }
   },
   computed: {
-    textBotao () {
-      if (this.modoEscuroAtivo) {
+    buttonText () {
+      if (this.darkModeActive) {
         return 'Turn Off Darkmode'
       }
       return 'Turn On Darkmode'
     }
   },
   methods: {
-    alterarTema () {
-      this.modoEscuroAtivo = !this.modoEscuroAtivo
-      this.$emit('aoTemaAlterado', this.modoEscuroAtivo)
+    changeTheme () {
+      this.darkModeActive = !this.darkModeActive
+      this.$emit('toThemeChanged', this.darkModeActive)
     }
   }
 })
@@ -70,15 +71,27 @@ header {
 .panel li {
   margin: 8px 0;
 }
-.link {
+.button {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+}
+.links-col {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+}
+.links {
+  display: flex;
+  align-items: center;
+  text-align: center;
   color: #fff;
 }
-.link:hover {
+.links:hover {
   color: #FAF0CA;
-  background-color: beige;
 }
-.link.router-link-active {
-  color: #FAF0CA;
+.links.router-link-active {
+  color: #416e98;
 }
 .button:hover { 
   background-color: #0d3b66;
