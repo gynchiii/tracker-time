@@ -25,7 +25,7 @@ export default defineComponent({
   data () {
     return {
       Taskss: [] as ITasks[],
-      modoEscuroAtivo: false
+      darkModeActive: false
     }
   },
   computed: {
