@@ -13,8 +13,29 @@
           Save
         </button>
       </div>
-
     </form>
+    <table class="table is-fullwidth">
+      <thead>
+        <tr>
+          <th>
+            ID
+          </th>
+          <th>
+            Name
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-for="project in projects" :key="project.id">
+          <td>
+            {{ project.id }}
+          </td>
+          <td>
+            {{ project.name }}
+          </td>
+        </tr>
+      </tbody>
+    </table>
   </section>
 </template>
 

@@ -93,9 +93,10 @@ header {
 .links.router-link-active {
   color: #416e98;
 }
+
 .button:hover { 
   background-color: #0d3b66;
-  color: #fff;
+  color: #FAF0CA;
   border-radius: 40;
 }
 </style>

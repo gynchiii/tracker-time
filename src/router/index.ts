@@ -2,7 +2,7 @@ import { createRouter, createWebHashHistory, RouteRecordRaw } from "vue-router";
 import Tasks from '../views/Tasks.vue'
 import Projects from '../views/Projects.vue'
 
-//tipo q representa a interface de cada rota da aplicação
+//type w/ represents the interface of each application route
 const routes: RouteRecordRaw[] = [
     {
       path: '/',
