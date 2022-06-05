@@ -1,8 +1,17 @@
 <template>
   <div class="box Form">
     <div class="columns">
-      <div class="column is-6" role="form" aria-label="Form for a new Task">
-        <input type="text" class="input" placeholder="Wich task u wanna start?" v-model="description" />
+      <div 
+      class="column is-6" 
+      role="form" 
+      aria-label="Form for a new Task"
+      >
+        <input
+          type="text" 
+          class="input" 
+          placeholder="Wich task u wanna start?" 
+          v-model="description" 
+        />
       </div>
       <div class="column is-3">
         <div class="select">
