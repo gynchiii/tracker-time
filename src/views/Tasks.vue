@@ -1,7 +1,7 @@
 <template>
-      <Formulario @aoSalvarTarefa="salvarTarefa"/>
+      <Form @aoSalvarTasks="salvarTasks"/>
       <div class="lista">
-        <Tarefa v-for="(tarefa, index) in tarefas" :key="index" :tarefa="tarefa"/>
+        <Tasks v-for="(Tasks, index) in Taskss" :key="index" :Tasks="Tasks"/>
             <Box v-if="listaEstaVazia">
               Hmmm... seems like u not so much productive today...
             </Box>
@@ -10,32 +10,32 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import Formulario from '../components/Formulario.vue'
-import Tarefa from '../components/Tarefa.vue'
+import Form from '../components/Form.vue'
+import Tasks from '../components/Tasks.vue'
 import Box from '../components/Box.vue'
-import ITarefa from '../interfaces/ITarefa'
+import ITasks from '../interfaces/ITasks'
 
 export default defineComponent({
   name: 'App',
   components: {
-    Formulario,
-    Tarefa,
+    Form,
+    Tasks,
     Box
   },
   data () {
     return {
-      tarefas: [] as ITarefa[],
+      Taskss: [] as ITasks[],
       modoEscuroAtivo: false
     }
   },
   computed: {
     listaEstaVazia () : boolean {
-      return this.tarefas.length === 0
+      return this.Taskss.length === 0
     }
   },
   methods: {
-    salvarTarefa (tarefa: ITarefa) {
-      this.tarefas.push(tarefa)
+    salvarTasks (Tasks: ITasks) {
+      this.Taskss.push(Tasks)
     },
   }
 });
@@ -46,14 +46,14 @@ export default defineComponent({
   padding: 1.25rem;
 }
 main {
-  --bg-primario: #fff;
-  --texto-primario: #000;
+  --bg-primary: #fff;
+  --text-primary: #000;
 }
 main.modo-escuro {
-  --bg-primario: #2b2d42;
-  --texto-primario: #ddd;
+  --bg-primary: #2b2d42;
+  --text-primary: #ddd;
 }
 .conteudo {
-  background-color: var(--bg-primario);
+  background-color: var(--bg-primary);
 }
 </style>

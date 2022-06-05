@@ -4,7 +4,7 @@
         <img width="70" src="../assets/logo.png" alt="">  
       </h1>
       <button class="button" @click="alterarTema">
-        {{ textoBotao }}
+        {{ textBotao }}
       </button>
       <nav class="panel mt-5"> 
           <ul>
@@ -29,7 +29,7 @@
 import { defineComponent } from 'vue'
 
 export default defineComponent({
-  name: 'BarraLateral',
+  name: 'LateralBar',
   emits: ['aoTemaAlterado'],
   data () {
     return {
@@ -37,7 +37,7 @@ export default defineComponent({
     }
   },
   computed: {
-    textoBotao () {
+    textBotao () {
       if (this.modoEscuroAtivo) {
         return 'Turn Off Darkmode'
       }
