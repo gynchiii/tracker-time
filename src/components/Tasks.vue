@@ -3,7 +3,7 @@
     <div class="columns">
       <div class="column is-7">{{ Tasks.description || 'Task w/out description' }}</div>
       <div class="column">
-        <StopWatch :tempoEmSegundos="Tasks.durationInSeconds"/>
+        <StopWatch :timeInSeconds="Tasks.durationInSeconds"/>
       </div>
     </div>
   </Box>

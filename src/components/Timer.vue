@@ -1,13 +1,13 @@
 <template>
   <div class="is-flex is-align-items-center is-justify-content-space-between">
-    <StopWatch :tempoEmSegundos="tempoEmSegundos" />
-    <button class="button" @click="iniciar" :disabled="StopWatchRodando">
+    <StopWatch :timeInSeconds="timeInSeconds" />
+    <button class="button" @click="start" :disabled="StopWatchRunning">
       <span class="icon">
         <i class="fas fa-play"></i>
       </span>
       <span>play</span>
     </button>
-    <button class="button" @click="finalizar" :disabled="!StopWatchRodando">
+    <button class="button" @click="finish" :disabled="!StopWatchRunning">
       <span class="icon">
         <i class="fas fa-stop"></i>
       </span>
@@ -28,25 +28,25 @@ export default defineComponent({
   },
   data () {
     return {
-      tempoEmSegundos: 0,
+      timeInSeconds: 0,
       StopWatch: 0,
-      StopWatchRodando: false
+      StopWatchRunning: false
     }
   },
   methods: {
-    iniciar () {
-      // começar a contagem
+    start () {
+      // start count
       // 1 seg = 1000 ms
-      this.StopWatchRodando = true
+      this.StopWatchRunning = true
       this.StopWatch = setInterval(() => {
-        this.tempoEmSegundos += 1        
+        this.timeInSeconds += 1        
       }, 1000)
     },
-    finalizar () {
-      this.StopWatchRodando = false
+    finish () {
+      this.StopWatchRunning = false
       clearInterval(this.StopWatch)
-      this.$emit('toTimerFinished', this.tempoEmSegundos)
-      this.tempoEmSegundos = 0
+      this.$emit('toTimerFinished', this.timeInSeconds)
+      this.timeInSeconds = 0
     }
   }
 });

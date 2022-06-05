@@ -1,4 +1,4 @@
-# alura-tracker
+# timestamp-tracker on vue3
 
 ## Project setup
 ```
